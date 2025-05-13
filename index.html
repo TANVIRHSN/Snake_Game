@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="text-white text-2xl mb-4 flex space-x-8">
+        <span>Score: <span id="score">0</span></span>
+        <span>Time: <span id="timer">00:00</span></span>
+    </div>
+    <canvas id="gameCanvas" width="400" height="400" class="border-4 border-white rounded-lg"></canvas>
+    <div id="mainMenu" class="menu absolute text-white p-6 text-center">
+        <h2 class="text-3xl font-bold mb-4 glow-text">Snake Game</h2>
+        <button onclick="startGame()" class="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg mb-2 w-full transition">Start New Game</button>
+        <button onclick="resumeGame()" id="resumeBtn" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg mb-2 w-full transition hidden">Resume Saved Game</button>
+        <button onclick="quitGame()" class="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-lg w-full transition">Quit</button>
+    </div>
+    <div id="gameOver" class="game-over absolute text-white p-6 text-center hidden">
+        <h2 class="text-3xl font-bold mb-4 glow-text">Game Over</h2>
+        <p class="text-xl mb-4">Your Score: <span id="finalScore"></span></p>
+        <button onclick="restartGame()" class="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg mb-2 w-full transition">Restart</button>
+        <button onclick="resetGame()" class="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-2 rounded-lg mb-2 w-full transition">Reset</button>
+        <button onclick="showMainMenu()" class="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-lg w-full transition">Main Menu</button>
+    </div>
+    <div id="paused" class="paused absolute text-white p-6 text-center hidden">
+        <h2 class="text-3xl font-bold mb-4 glow-text">Paused</h2>
+        <button onclick="resumeGame()" class="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg mb-2 w-full transition">Resume</button>
+        <button onclick="saveGame()" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg mb-2 w-full transition">Save Game</button>
+        <button onclick="showMainMenu()" class="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-lg w-full transition">Main Menu</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+body {
+    background: linear-gradient(135deg, #6ee7b7, #3b82f6);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+#gameCanvas {
+    box-shadow: 0 0 20px rgba(0, 255, 128, 0.5);
+    border-radius: 10px;
+    background: #ffffff;
+}
+
+.menu, .game-over, .paused {
+    background: rgba(0, 0, 0, 0.85);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+}
+
+.glow-text {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
